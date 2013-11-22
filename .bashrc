@@ -76,7 +76,7 @@ alias ll='ls -l'
 alias la='ls -la'
 alias mmkdir='mkdir -m 770 -p'
 alias ssh='ssh -i ~/.ssh/id_rsa'
-alias tmux='tmux source-file ~/.tmux.conf'
+#alias tmux='tmux source-file ~/.tmux.conf'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -87,5 +87,5 @@ fi
 
 # Jump to the HOME folder
 cd $HOME
-
+tmux
 
