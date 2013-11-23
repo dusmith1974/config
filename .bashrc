@@ -1,4 +1,4 @@
-##################################
+###############################
 #                                 #
 # Terminal IDE ~/.bashrc ver 1.2  #
 #                                 #
@@ -39,6 +39,7 @@ then
 
 	#Need to resize the screen
 	resize
+
 fi
 
 #Some default values - this used by telnetd
@@ -52,7 +53,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
-#HISTFILESIZE=2000
+HISTFILESIZE=2000
 HISTFILE=$HOME/.bash_history
 #Reload the history - as bash original starts from wrong home dir..
 history -r
@@ -63,7 +64,8 @@ history -r
 color_prompt=yes
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;32m\]terminal\[\e[1;31m\]++\[\e[1;33m\]@\[\e[1;35m\]$HOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    #PS1='\[\033[01;32m\]terminal\[\e[1;31m\]++\[\e[1;33m\]@\[\e[1;35m\]$HOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\033[01;32m\]bash:\[\033[01;34m\]\w\n\[\033[00m\]\$ '
 else
     PS1='\u@\h:\w\$ '
     #OR Super Simple
@@ -81,11 +83,11 @@ alias ssh='ssh -i ~/.ssh/id_rsa'
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+#if [ -f ~/.bash_aliases ]; then
+#    . ~/.bash_aliases
+#fi
 
 # Jump to the HOME folder
-cd $HOME
+#cd /data/data/com.spartacusrex.spartacuside/files
 tmux
 
