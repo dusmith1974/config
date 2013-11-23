@@ -12,6 +12,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+color_prompt=yes
+PS1='\[\033[01;32m\]osx:\[\033[01;34m\]\w\n\[\033[00m\]\$ '
 alias ls='ls -G'
 tmux source-file ~/.tmux.conf
 #tmux
