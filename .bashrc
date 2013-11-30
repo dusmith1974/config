@@ -28,6 +28,7 @@ export GIT_AUTHOR_NAME="Duncan Smith"
 export GIT_AUTHOR_EMAIL="duncan.smith@telperin.com"
 export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
 export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
+export BOOST_DIR=~/sw/lib/boost_1_55_0
 
 #Check if we are running over telnet or ssh
 #This variable is set in the telnetd script
@@ -65,7 +66,7 @@ color_prompt=yes
 
 if [ "$color_prompt" = yes ]; then
     #PS1='\[\033[01;32m\]terminal\[\e[1;31m\]++\[\e[1;33m\]@\[\e[1;35m\]$HOSTNAME\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1='\[\033[01;32m\]bash:\[\033[01;34m\]\w\n\[\033[00m\]\$ '
+    PS1='\[\033[01;32m\]nexus7:\[\033[01;34m\]\w\n\[\033[00m\]\$ '
 else
     PS1='\u@\h:\w\$ '
     #OR Super Simple
