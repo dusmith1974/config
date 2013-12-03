@@ -9,7 +9,7 @@
 "The basic settings
 set nocp
 set ls=2
-set tabstop=4
+set tabstop=2
 set ruler
 set number
 set ignorecase
@@ -19,6 +19,7 @@ set nobackup
 set wrap
 set hidden
 set backspace=indent,eol,start
+set expandtab
 
 "Syntax highlighting
 syntax on
