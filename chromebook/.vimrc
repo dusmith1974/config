@@ -32,7 +32,6 @@ set ofu=syntaxcomplete#Complete
 
 "Source a few scripts at startup
 "source ~/.vim/autoload/javacomplete.vim
-source ~/.vim/colors/github.vim
 
 "Set some nice java functions - <CTRL>X <CTRL>U
 set completefunc=javacomplete#Complete
@@ -96,4 +95,5 @@ nnoremap <F3> :TlistToggle<CR>
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 50
 
-
+" >% to indent block
+set shiftwidth=2
