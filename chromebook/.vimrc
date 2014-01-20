@@ -97,3 +97,6 @@ let Tlist_WinWidth = 50
 
 " >% to indent block
 set shiftwidth=2
+
+":au BufWinEnter *.cc,*.h let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+:au BufWinEnter *.cc,*.h let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
