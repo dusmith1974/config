@@ -114,5 +114,6 @@ if ! shopt -oq posix; then
 fi
 
 export BOOST_DIR=/usr/include
+export LC_ALL=C
 
 tmux
