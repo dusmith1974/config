@@ -117,3 +117,20 @@ set shiftwidth=2
 " hightlight text over 80 chars
 ":au BufWinEnter *.cc,*.h let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
 :au BufWinEnter *.cc,*.h let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+set statusline=%t       "tail of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h      "help file flag
+set statusline+=%m      "modified flag
+set statusline+=%r      "read only flag
+set statusline+=%y      "filetype
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+set statusline+=%{fugitive#statusline()}
