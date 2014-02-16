@@ -32,6 +32,7 @@ set ofu=syntaxcomplete#Complete
 
 "Source a few scripts at startup
 "source ~/.vim/autoload/javacomplete.vim
+source ~/.vim/autoload/cscope_maps.vim
 
 "Set some nice java functions - <CTRL>X <CTRL>U
 set completefunc=javacomplete#Complete
@@ -48,9 +49,24 @@ autocmd Filetype java set makeprg=javac\ %
 "autocmd Filetype java set makeprg=javac\ -d\ ../build/\ %
 
 "Mapped some FUNCTION keys to be more useful..
-map <F7> :make<Return>:copen<Return>
-map <F8> :cprevious<Return>
-map <F9> :cnext<Return>
+map <F7> :wa<Return>:make<Return>:copen<Return>
+map <F9> :wa<Return>:make clean<Return>:copen<Return>
+map <F10> :wa<Return>:make debug<Return>:copen<Return>
+imap <F7> <ESC><F7>
+imap <F9> <ESC><F9>
+imap <F10> <ESC><F10>
+
+map <F6> :cprevious<Return>
+map <F8> :cnext<Return>
+imap <F6> <ESC><F6>
+imap <F8> <ESC><F8>
+
+map <F1> :lprev<Return>
+map <F2> :lnext<Return>
+imap <F1> <ESC><F1>
+imap <F2> <ESC><F2>
+
+imap jj <Esc>
 
 "This is a nice buffer switcher
 :nnoremap <F5> :buffers<CR>:buffer<Space>
@@ -98,5 +114,6 @@ let Tlist_WinWidth = 50
 " >% to indent block
 set shiftwidth=2
 
+" hightlight text over 80 chars
 ":au BufWinEnter *.cc,*.h let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
 :au BufWinEnter *.cc,*.h let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
