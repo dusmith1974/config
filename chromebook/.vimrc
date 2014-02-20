@@ -33,6 +33,7 @@ set ofu=syntaxcomplete#Complete
 "Source a few scripts at startup
 "source ~/.vim/autoload/javacomplete.vim
 source ~/.vim/autoload/cscope_maps.vim
+source ~/.vim/autoload/taglist.vim
 
 "Set some nice java functions - <CTRL>X <CTRL>U
 set completefunc=javacomplete#Complete
@@ -49,27 +50,32 @@ autocmd Filetype java set makeprg=javac\ %
 "autocmd Filetype java set makeprg=javac\ -d\ ../build/\ %
 
 "Mapped some FUNCTION keys to be more useful..
+map <F1> :lprev<Return>
+map <F2> :lnext<Return>
+map <F5> :buffers<CR>:buffer<Space>
+map <F4> <C-w><C-w><C-w><C-o>
+map <F6> :cprevious<Return>
 map <F7> :wa<Return>:make<Return>:copen<Return>
+map <F8> :cnext<Return>
 map <F9> :wa<Return>:make clean<Return>:copen<Return>
 map <F10> :wa<Return>:make debug<Return>:copen<Return>
+
+map z :tp<Return>
+map zz :tn<Return>
+map zzz :ts<Return>
+map cc :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
+
+imap <F1> <ESC><F1>
+imap <F2> <ESC><F2>
+imap <F4> <ESC><F4>
+imap <F5> <ESC><F5>
+imap <F6> <ESC><F6>
 imap <F7> <ESC><F7>
+imap <F8> <ESC><F8>
 imap <F9> <ESC><F9>
 imap <F10> <ESC><F10>
 
-map <F6> :cprevious<Return>
-map <F8> :cnext<Return>
-imap <F6> <ESC><F6>
-imap <F8> <ESC><F8>
-
-map <F1> :lprev<Return>
-map <F2> :lnext<Return>
-imap <F1> <ESC><F1>
-imap <F2> <ESC><F2>
-
 imap jj <Esc>
-
-"This is a nice buffer switcher
-:nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " These are useful when using MinBufExpl
 " BUT the CTRL+ARROW key mappings are still wrong on Terminal IDE soft Keyboard..
