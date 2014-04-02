@@ -55,18 +55,19 @@ map <F2> :lnext<Return>
 map <F5> :buffers<CR>:buffer<Space>
 map <F4> <C-w><C-w><C-w><C-o>
 map <F6> :cprevious<Return>
-map <F7> :wa<Return>:make<Return>:copen<Return>
+map <F7> <C-w><C-o>:wa<Return>:make<Return>:copen<Return>
 map <F8> :cnext<Return>
-map <F9> :wa<Return>:make clean<Return>:copen<Return>
-map <F10> :wa<Return>:make debug<Return>:copen<Return>
+map <F9> <C-w><C-o>:wa<Return>:make clean<Return>:copen<Return>
+map <F10> <C-w><C-o>:wa<Return>:make debug<Return>:copen<Return>
 
-map z :tp<Return>
-map zz :tn<Return>
-map zzz :ts<Return>
+"map z :tp<Return>
+"#map zz :tn<Return>
+"#map zx :ts<Return>
 map cc :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
 
 imap <F1> <ESC><F1>
 imap <F2> <ESC><F2>
+imap <F3> <ESC><F3>
 imap <F4> <ESC><F4>
 imap <F5> <ESC><F5>
 imap <F6> <ESC><F6>
@@ -83,8 +84,8 @@ imap jj <Esc>
 "let g:miniBufExplMapWindowNavVim    = 1
 "let g:miniBufExplMapWindowNavArrows = 1
 
-"You can change colors easily in vim. 
-"Just type <ESC>:colorscheme and then TAB complete through the options 
+"You can change colors easily in vim.
+"Just type <ESC>:colorscheme and then TAB complete through the options
 set t_Co=256
 colorscheme elflord
 set background=dark
@@ -96,7 +97,7 @@ set background=dark
 :highlight PmenuThumb ctermbg=white ctermfg=red
 
 " DICTIONARY
-" The dictioanry can pop up a lot of words when you have Auto popup enabled. 
+" The dictioanry can pop up a lot of words when you have Auto popup enabled.
 " You can disable auto popup, by removing the acp.vim from your ~/.vim/plugin/
 " directory and enable the dictionary here - then use <CTRL>X <CTRL>K to bring
 " up the dictionary options. Or just enable it.. :-)
@@ -113,7 +114,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 "autocmd VimEnter * wincmd p
 
 "TAGLIST setup
-nnoremap <F3> :TlistToggle<CR>
+nnoremap <F3> :TlistToggle<CR><C-w><C-w>
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 50
 
@@ -140,3 +141,10 @@ set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 set statusline+=%{fugitive#statusline()}
+
+autocmd BufWritePre *.{cc,h} :%s/\s\+$//e
+
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
+
+set wrap!
