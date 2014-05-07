@@ -117,3 +117,4 @@ export BOOST_DIR=/usr/include
 export LC_ALL=C
 
 tmux
+xmodmap ~/.Xmodmap
