@@ -53,30 +53,33 @@ autocmd Filetype java set makeprg=javac\ %
 set timeout timeoutlen=100 ttimeoutlen=1000
 map <F1> :lprev<Return>
 map <F2> :lnext<Return>
-map <F5> :buffers<CR>:buffer<Space>
+set <S-F5>=[15;2~
+map <S-F5> :buffers<CR>:buffer<Space>
 map <F4> <C-w><C-w><C-w><C-o>
-map <F6> :cprevious<Return>
+set <S-F6>=[17;2~
+map <S-F6> :cprevious<Return>
 
 "F7 make
 map <F7> <C-w><C-o>:wa<Return>:make<Return>:copen<Return>
 
 "S-F7 make clean
 set <S-F7>=[18;2~
-map <S-F7> <C-w><C-o>:wa<Return>:make clean<Return>:copen<Return>
+map <S-F7> <C-w><C-o>:wa<Return>:make debug<Return>:copen<Return>
 
 "C-F7 make debug
 set <F13>=[18;5~
 map <F13> <C-F7>
 map! <F13> <C-F7>
-map <C-F7> <C-w><C-o>:wa<Return>:make debug<Return>:copen<Return>
+map <C-F7> <C-w><C-o>:wa<Return>:make clean<Return>:copen<Return>
 
 "C-S-F7 make clean && make debug
 set <S-F13>=[18;6~
 map <S-F13> <C-S-F7>
 map! <S-F13> <C-S-F7>
-map <C-S-F7> <S-F7><Return><F4><C-F7>
+map <C-S-F7> <S-F7><Return><F4><C-F7><Return>
 
-map <F8> :cnext<Return>
+set <S-F8>=[19;2~
+map <S-F8> :cnext<Return>
 
 "map z :tp<Return>
 "#map zz :tn<Return>
@@ -88,16 +91,21 @@ imap <F2> <ESC><F2>
 imap <F3> <ESC><F3>
 imap <F4> <ESC><F4>
 imap <F5> <ESC><F5>
+imap <S-F5> <ESC><F5>
 imap <F6> <ESC><F6>
+imap <S-F6> <ESC><F6>
 imap <F7> <ESC><F7>
 imap <S-F7> <ESC><S-F7>
 imap <C-F7> <ESC><C-F7>
 imap <C-S-F7> <ESC><C-S-F7>
 imap <F8> <ESC><F8>
+imap <S-F8> <ESC><F8>
 imap <F9> <ESC><F9>
+imap <S-F9> <ESC><F9>
 imap <F10> <ESC><F10>
+imap <S-F10> <ESC><F10>
 
-"imap jj <Esc> "now xmodmapped search key to esc
+"imap jj <Esc>
 
 " These are useful when using MinBufExpl
 " BUT the CTRL+ARROW key mappings are still wrong on Terminal IDE soft Keyboard..
