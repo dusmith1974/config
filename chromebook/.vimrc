@@ -50,7 +50,7 @@ autocmd Filetype java set makeprg=javac\ %
 "autocmd Filetype java set makeprg=javac\ -d\ ../build/\ %
 
 "Mapped some FUNCTION keys to be more useful..
-set timeout timeoutlen=1000 ttimeoutlen=100
+set timeout timeoutlen=100 ttimeoutlen=1000
 map <F1> :lprev<Return>
 map <F2> :lnext<Return>
 map <F5> :buffers<CR>:buffer<Space>
@@ -92,6 +92,7 @@ imap <F6> <ESC><F6>
 imap <F7> <ESC><F7>
 imap <S-F7> <ESC><S-F7>
 imap <C-F7> <ESC><C-F7>
+imap <C-S-F7> <ESC><C-S-F7>
 imap <F8> <ESC><F8>
 imap <F9> <ESC><F9>
 imap <F10> <ESC><F10>
