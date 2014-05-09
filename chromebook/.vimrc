@@ -50,7 +50,7 @@ autocmd Filetype java set makeprg=javac\ %
 "autocmd Filetype java set makeprg=javac\ -d\ ../build/\ %
 
 "Mapped some FUNCTION keys to be more useful..
-set timeout timeoutlen=100 ttimeoutlen=1000
+"set timeout timeoutlen=100 ttimeoutlen=1000
 map <F1> :lprev<Return>
 map <F2> :lnext<Return>
 set <S-F5>=[15;2~
@@ -60,17 +60,17 @@ set <S-F6>=[17;2~
 map <S-F6> :cprevious<Return>
 
 "F7 make
-map <F7> <C-w><C-o>:wa<Return>:make<Return>:copen<Return>
+map <F7> <C-w><C-o>:wa<Return>:make<Return>:copen<Return><Return>
 
 "S-F7 make clean
 set <S-F7>=[18;2~
-map <S-F7> <C-w><C-o>:wa<Return>:make debug<Return>:copen<Return>
+map <S-F7> <C-w><C-o>:wa<Return>:make debug<Return>:copen<Return><Return>
 
 "C-F7 make debug
 set <F13>=[18;5~
 map <F13> <C-F7>
 map! <F13> <C-F7>
-map <C-F7> <C-w><C-o>:wa<Return>:make clean<Return>:copen<Return>
+map <C-F7> <C-w><C-o>:wa<Return>:make clean<Return>:copen<Return><Return>
 
 "C-S-F7 make clean && make debug
 set <S-F13>=[18;6~
@@ -105,7 +105,7 @@ imap <S-F9> <ESC><F9>
 imap <F10> <ESC><F10>
 imap <S-F10> <ESC><F10>
 
-"imap jj <Esc>
+imap jj <Esc>
 
 " These are useful when using MinBufExpl
 " BUT the CTRL+ARROW key mappings are still wrong on Terminal IDE soft Keyboard..
