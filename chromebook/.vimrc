@@ -104,7 +104,7 @@ imap <F9> <ESC><F9>
 imap <S-F9> <ESC><F9>
 imap <F10> <ESC><F10>
 imap <S-F10> <ESC><F10>
-
+imap <C-w> <ESC><C-w>
 imap jj <Esc>
 
 " These are useful when using MinBufExpl
