@@ -116,5 +116,7 @@ fi
 export BOOST_DIR=/usr/include
 export LC_ALL=C
 
+export PATH=$PATH:$HOME/sw/workspaces/template
+
 #xmodmap $HOME/.Xmodmap
 tmux
